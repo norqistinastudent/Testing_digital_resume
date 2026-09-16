@@ -1,3 +1,8 @@
+/* ========================================
+   NOR QISTINA ALICE LAU — DIGITAL RESUME
+   VERSION: ELEGANT & POP-UP EFFECTS
+   ======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +19,13 @@
     --text-dark: #1B5E20;
     --card-bg: #F2FBF7;
     --shadow-btn: 0 4px 0 rgba(35, 110, 39, 0.35);
+    --shadow-btn-hover: 0 6px 0 rgba(35, 110, 39, 0.35), 0 8px 20px rgba(76, 175, 80, 0.25);
+    --shadow-card: 0 10px 30px rgba(76, 175, 80, 0.12);
+    --shadow-card-pop: 0 15px 40px rgba(76, 175, 80, 0.18), 0 5px 15px rgba(0,0,0,0.05);
+    --accent-pink: #FFB7B2;
+    --accent-rose: #FF6B6B;
+    --border-light: #B5EAD7;
+    --glow-green: rgba(76, 175, 80, 0.35);
 }
 
 body {
@@ -24,12 +36,14 @@ body {
     background-size: 70px 70px;
     background-position: 0 0, 35px 35px;
     color: var(--text-dark);
-    line-height: 1.5;
+    line-height: 1.6;
     min-height: 100vh;
     padding: 25px 20px;
 }
 
-/* Paw Background */
+/* ========================================
+   PAW BACKGROUND — HIASAN TERAPUNG
+   ======================================== */
 .paw-bg {
     position: fixed;
     font-size: 45px;
@@ -52,7 +66,9 @@ body {
     100% { transform: translateY(0) rotate(0deg); }
 }
 
-/* INDEX — Butang di Tengah */
+/* ========================================
+   HALAMAN UTAMA — BUTANG TENGAH
+   ======================================== */
 .center-container {
     display: flex;
     align-items: center;
@@ -65,48 +81,150 @@ body {
 .nav-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 15px;
     justify-content: center;
-    max-width: 900px;
+    max-width: 950px;
     width: 100%;
 }
 
 .nav-btn {
-    background: linear-gradient(180deg, var(--btn-green), var(--btn-green-dark));
+    background: linear-gradient(180deg, #66BB6A, var(--btn-green), var(--btn-green-dark));
     color: var(--text-white);
     border: none;
-    padding: 14px 24px;
+    padding: 16px 28px;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.15s ease;
+    gap: 10px;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: var(--shadow-btn);
     position: relative;
     top: 0;
     letter-spacing: 0.5px;
     text-decoration: none;
     white-space: nowrap;
+    border-bottom: 3px solid var(--btn-green-active);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    animation: popIn 0.5s ease forwards;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.nav-btn:nth-child(1) { animation-delay: 0.05s; }
+.nav-btn:nth-child(2) { animation-delay: 0.1s; }
+.nav-btn:nth-child(3) { animation-delay: 0.15s; }
+.nav-btn:nth-child(4) { animation-delay: 0.2s; }
+.nav-btn:nth-child(5) { animation-delay: 0.25s; }
+.nav-btn:nth-child(6) { animation-delay: 0.3s; }
+.nav-btn:nth-child(7) { animation-delay: 0.35s; }
+.nav-btn:nth-child(8) { animation-delay: 0.4s; }
+.nav-btn:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(15px);
+    }
+    70% {
+        transform: scale(1.05) translateY(-3px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .nav-btn .icon {
-    font-size: 18px;
+    font-size: 20px;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
 }
 
 .nav-btn:hover {
-    top: -3px;
-    box-shadow: 0 7px 0 rgba(35, 110, 39, 0.35);
+    top: -4px;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-btn-hover);
+    background: linear-gradient(180deg, #81C784, #4CAF50, #388E3C);
 }
 
 .nav-btn:active {
     top: 2px;
+    transform: scale(0.98);
     box-shadow: 0 2px 0 rgba(35, 110, 39, 0.35);
 }
 
-/* HALAMAN KANDUNGAN */
+/* ========================================
+   BUTANG BACK TO MENU — REALISTIK & TIMBUL
+   ======================================== */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 25px;
+    padding: 12px 25px;
+    background: linear-gradient(180deg, #66BB6A, var(--btn-green), var(--btn-green-dark));
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 4px 0 rgba(35, 110, 39, 0.4),
+        0 6px 12px rgba(76, 175, 80, 0.15);
+    position: relative;
+    top: 0;
+    border-bottom: 3px solid var(--btn-green-active);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    animation: backPop 0.5s ease forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+@keyframes backPop {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.back-btn::before {
+    content: '←';
+    font-size: 18px;
+    font-weight: 900;
+    transition: transform 0.2s ease;
+}
+
+.back-btn:hover {
+    top: -3px;
+    transform: translateX(-5px);
+    box-shadow: 
+        0 7px 0 rgba(35, 110, 39, 0.4),
+        0 10px 25px rgba(76, 175, 80, 0.25);
+    background: linear-gradient(180deg, #81C784, #66BB6A, var(--btn-green-dark));
+}
+
+.back-btn:hover::before {
+    transform: translateX(-4px);
+}
+
+.back-btn:active {
+    top: 2px;
+    transform: translateX(0);
+    box-shadow: 
+        0 2px 0 rgba(35, 110, 39, 0.4),
+        0 3px 6px rgba(76, 175, 80, 0.15);
+}
+
+/* ========================================
+   KANDUNGAN — HALAMAN DALAM
+   ======================================== */
 .main-container {
     max-width: 900px;
     margin: 0 auto;
@@ -114,50 +232,88 @@ body {
     z-index: 1;
 }
 
-.back-btn {
-    display: inline-block;
-    color: var(--btn-green-dark);
-    text-decoration: none;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding: 8px 16px;
-    background: rgba(76, 175, 80, 0.1);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.back-btn:hover {
-    background: rgba(76, 175, 80, 0.2);
-    transform: translateX(-3px);
-}
-
 .content-area {
     background: rgba(255, 255, 255, 0.96);
-    border-radius: 20px;
-    padding: 40px 35px;
-    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.12);
-    animation: fadeIn 0.4s ease;
+    border-radius: 24px;
+    padding: 45px 40px;
+    box-shadow: var(--shadow-card-pop);
+    animation: cardPopUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    border: 1px solid rgba(76, 175, 80, 0.1);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes cardPopUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    60% {
+        transform: translateY(-5px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .section-heading {
-    font-size: 26px;
+    font-size: 28px;
     color: var(--btn-green-active);
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #B5EAD7;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--border-light);
+    position: relative;
+    display: inline-block;
 }
 
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--btn-green), var(--accent-pink));
+    border-radius: 3px;
+    animation: expandLine 0.8s ease 0.3s forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+@keyframes expandLine {
+    to { transform: scaleX(1); }
+}
+
+/* ========================================
+   PROFIL BAHAGIAN
+   ======================================== */
 .profile-header {
     display: flex;
     align-items: center;
     gap: 35px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+}
+
+.profile-pic {
+    position: relative;
+    animation: picPop 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+@keyframes picPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) rotate(-5deg);
+    }
+    70% {
+        transform: scale(1.05) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 .profile-pic img {
@@ -165,76 +321,136 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid #FFB7B2;
-    box-shadow: 0 8px 25px rgba(255, 183, 178, 0.35);
+    border: 6px solid var(--accent-pink);
+    box-shadow: 
+        0 8px 25px rgba(255, 183, 178, 0.35),
+        inset 0 0 0 4px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 12px 35px rgba(255, 183, 178, 0.45),
+        inset 0 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
 .profile-text {
     flex: 1;
     min-width: 280px;
+    animation: fadeUp 0.7s ease 0.15s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .full-name {
-    font-size: 32px;
+    font-size: 34px;
     color: var(--text-dark);
     margin-bottom: 8px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .tagline {
-    font-size: 17px;
-    color: #388E3C;
+    font-size: 18px;
+    color: var(--btn-green-dark);
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .goal {
     font-size: 16px;
-    color: #FF6B6B;
+    color: var(--accent-rose);
     margin-bottom: 15px;
-    font-weight: 600;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255, 107, 107, 0.08);
+    border-radius: 20px;
 }
 
 .contact-inline p {
     font-size: 15px;
-    margin: 5px 0;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .profile-desc h3 {
-    font-size: 20px;
+    font-size: 21px;
     color: var(--btn-green-active);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .profile-desc p {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #333;
 }
 
+/* ========================================
+   KAD KANDUNGAN — POP-UP EFFECT
+   ======================================== */
 .content-card {
     background: var(--card-bg);
-    padding: 25px 30px;
-    border-radius: 15px;
-    margin-bottom: 20px;
+    padding: 28px 32px;
+    border-radius: 18px;
+    margin-bottom: 22px;
     border-left: 5px solid var(--btn-green);
+    transition: all 0.3s ease;
+    animation: cardFadeIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateX(-15px);
+}
+
+.content-card:nth-child(1) { animation-delay: 0.1s; }
+.content-card:nth-child(2) { animation-delay: 0.2s; }
+.content-card:nth-child(3) { animation-delay: 0.3s; }
+.content-card:nth-child(4) { animation-delay: 0.4s; }
+.content-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.15);
+    border-left-width: 7px;
+    padding-left: 28px;
 }
 
 .content-card h3 {
     font-size: 20px;
     color: var(--btn-green-active);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-weight: 700;
 }
 
 .company {
     font-size: 15px;
-    color: #388E3C;
+    color: var(--btn-green-dark);
     font-style: italic;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .content-card p {
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    line-height: 1.7;
+    margin-bottom: 12px;
     color: #2F4F40;
 }
 
@@ -244,9 +460,15 @@ body {
 
 .content-card li {
     font-size: 15px;
-    line-height: 1.6;
-    padding: 6px 0;
+    line-height: 1.7;
+    padding: 8px 0;
     border-bottom: 1px dashed #C8E6C9;
+    transition: padding-left 0.2s ease;
+}
+
+.content-card li:hover {
+    padding-left: 8px;
+    color: var(--btn-green-active);
 }
 
 .center-text {
@@ -255,7 +477,7 @@ body {
 
 .sub-info {
     font-size: 16px;
-    color: #388E3C;
+    color: var(--btn-green-dark);
     margin-bottom: 15px;
 }
 
@@ -263,54 +485,109 @@ body {
     display: inline-block;
     background: linear-gradient(135deg, var(--btn-green), var(--btn-green-active));
     color: white;
-    padding: 15px 35px;
-    border-radius: 12px;
-    font-size: 22px;
+    padding: 16px 40px;
+    border-radius: 14px;
+    font-size: 24px;
     font-weight: 800;
-    box-shadow: 0 5px 0 rgba(46, 125, 50, 0.35);
+    box-shadow: 
+        0 6px 0 rgba(46, 125, 50, 0.35),
+        0 10px 25px rgba(76, 175, 80, 0.25);
+    transition: all 0.3s ease;
+    animation: badgePop 0.8s ease 0.3s forwards;
+    opacity: 0;
+    transform: scale(0.8);
 }
 
+@keyframes badgePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gpa-badge:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 9px 0 rgba(46, 125, 50, 0.35),
+        0 15px 35px rgba(76, 175, 80, 0.35);
+}
+
+/* ========================================
+   DUA LAJUR
+   ======================================== */
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 22px;
 }
 
+/* ========================================
+   PORTFOLIO — POP-UP EFFECT
+   ======================================== */
 .intro-text {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     font-size: 16px;
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 20px;
 }
 
 .portfolio-item {
     background: white;
-    padding: 25px 15px;
-    border-radius: 12px;
+    padding: 30px 20px;
+    border-radius: 16px;
     text-align: center;
-    border: 2px solid #B5EAD7;
-    transition: transform 0.2s ease;
+    border: 2px solid var(--border-light);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: portPop 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+}
+
+.portfolio-item:nth-child(1) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.3s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes portPop {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--btn-green);
+    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.2);
 }
 
 .port-icon {
-    font-size: 35px;
+    font-size: 40px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .port-icon {
+    transform: scale(1.2) rotate(5deg);
 }
 
 .portfolio-item h4 {
-    font-size: 18px;
+    font-size: 19px;
     color: var(--btn-green-active);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .portfolio-item p {
@@ -318,25 +595,40 @@ body {
     color: #66BB6A;
 }
 
+/* ========================================
+   SIJIL & RUJUKAN
+   ======================================== */
 .reference-note {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
     color: #66BB6A;
     font-style: italic;
+    padding: 12px;
+    background: rgba(76, 175, 80, 0.05);
+    border-radius: 10px;
 }
 
+/* ========================================
+   HUBUNGI — BUTANG SOSIAL TIMBUL
+   ======================================== */
 .contact-line {
     font-size: 17px;
-    margin: 12px 0;
+    margin: 14px 0;
 }
 
 .contact-line a {
     color: var(--btn-green-active);
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 2px dotted transparent;
+    transition: all 0.2s ease;
+}
+
+.contact-line a:hover {
+    border-bottom-color: var(--btn-green);
 }
 
 .social-links {
-    margin-top: 25px;
+    margin-top: 30px;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -344,19 +636,35 @@ body {
 }
 
 .social-link {
-    background: var(--btn-green);
+    background: linear-gradient(180deg, var(--btn-green), var(--btn-green-dark));
     color: white;
-    padding: 12px 25px;
-    border-radius: 10px;
+    padding: 14px 28px;
+    border-radius: 12px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 4px 0 rgba(35, 110, 39, 0.4),
+        0 6px 12px rgba(76, 175, 80, 0.15);
+    position: relative;
+    top: 0;
+    border-bottom: 3px solid var(--btn-green-active);
 }
 
 .social-link:hover {
-    background: var(--btn-green-active);
-    transform: translateY(-3px);
+    top: -4px;
+    transform: translateY(-4px);
+    box-shadow: 
+        0 8px 0 rgba(35, 110, 39, 0.4),
+        0 12px 25px rgba(76, 175, 80, 0.25);
+    background: linear-gradient(180deg, #66BB6A, var(--btn-green), var(--btn-green-dark));
+}
+
+.social-link:active {
+    top: 2px;
+    transform: translateY(0);
+    box-shadow: 0 2px 0 rgba(35, 110, 39, 0.4);
 }
 
 .whatsapp-link {
@@ -364,10 +672,11 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    border-bottom-color: #075E33;
 }
 
 .whatsapp-link:hover {
-    background: linear-gradient(135deg, #128C4E, #075E33);
+    background: linear-gradient(135deg, #2ED975, #159E59);
 }
 
 .social-icon {
@@ -376,27 +685,69 @@ body {
     flex-shrink: 0;
 }
 
-/* RESPONSIVE */
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px;
+    color: #66BB6A;
+    font-size: 14px;
+}
+
+/* ========================================
+   RESPONSIVE — TELEFON & TABLET
+   ======================================== */
 @media (max-width: 768px) {
+    body {
+        padding: 15px 12px;
+    }
+
     .nav-buttons {
         flex-direction: column;
         align-items: center;
     }
+
     .nav-btn {
         width: 100%;
         justify-content: center;
     }
+
     .two-column {
         grid-template-columns: 1fr;
     }
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
+
     .content-area {
-        padding: 25px 20px;
+        padding: 30px 22px;
     }
+
     .profile-header {
         flex-direction: column;
         text-align: center;
+    }
+
+    .full-name {
+        font-size: 26px;
+    }
+
+    .profile-pic img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .back-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-container {
+        max-width: 720px;
     }
 }
