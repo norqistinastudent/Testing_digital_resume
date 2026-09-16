@@ -13,7 +13,6 @@
     --text-white: #FFFFFF;
     --text-dark: #1B5E20;
     --card-bg: #F2FBF7;
-    --border-radius: 8px;
     --shadow-btn: 0 4px 0 rgba(35, 110, 39, 0.35);
 }
 
@@ -27,7 +26,7 @@ body {
     color: var(--text-dark);
     line-height: 1.5;
     min-height: 100vh;
-    padding: 20px 15px;
+    padding: 25px 20px;
 }
 
 /* Paw Background */
@@ -53,103 +52,112 @@ body {
     100% { transform: translateY(0) rotate(0deg); }
 }
 
-.main-container {
-    max-width: 500px;
-    margin: 0 auto;
+/* INDEX — Butang di Tengah */
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     position: relative;
     z-index: 1;
 }
 
-/* BUTANG — SAMA PERSIS MACAM GAMBAR AWAK */
 .nav-buttons {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 30px;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
 }
 
 .nav-btn {
     background: linear-gradient(180deg, var(--btn-green), var(--btn-green-dark));
     color: var(--text-white);
     border: none;
-    padding: 16px 24px;
-    font-size: 18px;
+    padding: 14px 24px;
+    font-size: 16px;
     font-weight: 700;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px;
     transition: all 0.15s ease;
     box-shadow: var(--shadow-btn);
     position: relative;
     top: 0;
     letter-spacing: 0.5px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-.nav-btn .btn-text {
-    text-align: left;
-}
-
-.nav-btn .divider {
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 8px;
-}
-
-.nav-btn .btn-icon {
-    font-size: 20px;
-    width: 28px;
-    text-align: center;
+.nav-btn .icon {
+    font-size: 18px;
 }
 
 .nav-btn:hover {
-    top: -2px;
-    box-shadow: 0 6px 0 rgba(35, 110, 39, 0.35);
+    top: -3px;
+    box-shadow: 0 7px 0 rgba(35, 110, 39, 0.35);
 }
 
 .nav-btn:active {
-    top: 4px;
-    box-shadow: 0 0 0 rgba(35, 110, 39, 0.35);
-}
-
-.nav-btn.active {
-    background: linear-gradient(180deg, var(--btn-green-active), var(--btn-green-dark));
     top: 2px;
     box-shadow: 0 2px 0 rgba(35, 110, 39, 0.35);
-    opacity: 0.95;
 }
 
-/* KANDUNGAN — MUNCUL BILA DITEKAN */
+/* HALAMAN KANDUNGAN */
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.back-btn {
+    display: inline-block;
+    color: var(--btn-green-dark);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateX(-3px);
+}
+
 .content-area {
     background: rgba(255, 255, 255, 0.96);
-    border-radius: 16px;
-    padding: 30px 25px;
-    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.12);
-    min-height: 400px;
-}
-
-.content-section {
-    display: none;
-    animation: fadeIn 0.3s ease;
-}
-
-.content-section.active {
-    display: block;
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.12);
+    animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* PROFILE */
+.section-heading {
+    font-size: 26px;
+    color: var(--btn-green-active);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #B5EAD7;
+}
+
 .profile-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 25px;
-    margin-bottom: 25px;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .profile-pic img {
@@ -157,12 +165,17 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #FFB7B2;
-    box-shadow: 0 6px 20px rgba(255, 183, 178, 0.3);
+    border: 6px solid #FFB7B2;
+    box-shadow: 0 8px 25px rgba(255, 183, 178, 0.35);
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 280px;
 }
 
 .full-name {
-    font-size: 26px;
+    font-size: 32px;
     color: var(--text-dark);
     margin-bottom: 8px;
 }
@@ -170,22 +183,22 @@ body {
 .tagline {
     font-size: 17px;
     color: #388E3C;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .goal {
     font-size: 16px;
     color: #FF6B6B;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 .contact-inline p {
     font-size: 15px;
-    margin: 4px 0;
+    margin: 5px 0;
 }
 
-.profile-desc h2 {
+.profile-desc h3 {
     font-size: 20px;
     color: var(--btn-green-active);
     margin-bottom: 10px;
@@ -197,40 +210,31 @@ body {
     color: #333;
 }
 
-/* BAHAGIAN UMUM */
-.section-heading {
-    font-size: 22px;
-    color: var(--btn-green-active);
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #B5EAD7;
-}
-
 .content-card {
     background: var(--card-bg);
-    padding: 22px 20px;
-    border-radius: 12px;
-    margin-bottom: 16px;
-    border-left: 4px solid var(--btn-green);
+    padding: 25px 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--btn-green);
 }
 
 .content-card h3 {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--btn-green-active);
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .company {
-    font-size: 14px;
+    font-size: 15px;
     color: #388E3C;
     font-style: italic;
     margin-bottom: 12px;
 }
 
 .content-card p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: #2F4F40;
 }
 
@@ -241,7 +245,7 @@ body {
 .content-card li {
     font-size: 15px;
     line-height: 1.6;
-    padding: 5px 0;
+    padding: 6px 0;
     border-bottom: 1px dashed #C8E6C9;
 }
 
@@ -250,83 +254,80 @@ body {
 }
 
 .sub-info {
-    font-size: 15px;
+    font-size: 16px;
     color: #388E3C;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .gpa-badge {
     display: inline-block;
     background: linear-gradient(135deg, var(--btn-green), var(--btn-green-active));
     color: white;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-size: 20px;
+    padding: 15px 35px;
+    border-radius: 12px;
+    font-size: 22px;
     font-weight: 800;
-    box-shadow: 0 4px 0 rgba(46, 125, 50, 0.3);
+    box-shadow: 0 5px 0 rgba(46, 125, 50, 0.35);
 }
 
-/* DUA LAJUR — SKRIN BESAR SAHAJA */
 .two-column {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-/* PORTFOLIO */
 .intro-text {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 15px;
+    margin-bottom: 25px;
+    font-size: 16px;
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
 .portfolio-item {
     background: white;
-    padding: 20px 12px;
-    border-radius: 10px;
+    padding: 25px 15px;
+    border-radius: 12px;
     text-align: center;
     border: 2px solid #B5EAD7;
     transition: transform 0.2s ease;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .port-icon {
-    font-size: 28px;
+    font-size: 35px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .portfolio-item h4 {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--btn-green-active);
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .portfolio-item p {
-    font-size: 14px;
+    font-size: 15px;
     color: #66BB6A;
 }
 
 .reference-note {
-    margin-top: 16px;
+    margin-top: 20px;
     text-align: center;
     color: #66BB6A;
     font-style: italic;
-    font-size: 14px;
 }
 
 .contact-line {
-    font-size: 16px;
-    margin: 10px 0;
+    font-size: 17px;
+    margin: 12px 0;
 }
 
 .contact-line a {
@@ -335,35 +336,33 @@ body {
 }
 
 .social-links {
-    margin-top: 22px;
+    margin-top: 25px;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .social-link {
     background: var(--btn-green);
     color: white;
-    padding: 12px 20px;
+    padding: 12px 25px;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
-    text-align: center;
 }
 
 .social-link:hover {
     background: var(--btn-green-active);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
-/* BUTANG WHATSAPP */
 .whatsapp-link {
     background: linear-gradient(135deg, #25D366, #128C4E);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
 }
 
@@ -377,37 +376,27 @@ body {
     flex-shrink: 0;
 }
 
-footer {
-    text-align: center;
-    margin-top: 25px;
-    padding: 15px;
-    color: #66BB6A;
-    font-size: 14px;
-}
-
-/* SAIZ SAMA DI SEMUA PERANTI — KUNCI UTAMA */
-@media (min-width: 768px) {
-    .main-container {
-        max-width: 500px;
-    }
-    .two-column {
-        grid-template-columns: 1fr 1fr;
-    }
-    .profile-header {
-        flex-direction: row;
-        text-align: left;
-    }
-    .social-links {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 1024px) {
-    .main-container {
-        max-width: 500px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
     }
     .nav-btn {
-        font-size: 18px;
+        width: 100%;
+        justify-content: center;
+    }
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .content-area {
+        padding: 25px 20px;
+    }
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
     }
 }
