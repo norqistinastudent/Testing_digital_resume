@@ -28,7 +28,7 @@ body {
     color: var(--text-primary);
     line-height: 1.5;
     min-height: 100vh;
-    padding: 30px 15px;
+    padding: 25px 20px;
 }
 
 /* Paw Background */
@@ -55,7 +55,7 @@ body {
 }
 
 .main-container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -64,47 +64,48 @@ body {
 /* Navigation Buttons */
 .nav-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 35px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
 }
 
 .nav-btn {
     background: linear-gradient(135deg, var(--mint-dark), var(--mint-darker));
     color: white;
     border: none;
-    padding: 16px 25px;
-    font-size: 19px;
+    padding: 14px 20px;
+    font-size: 16px;
     font-weight: 700;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 8px;
     transition: all 0.2s ease;
-    box-shadow: 0 5px 0 rgba(46, 125, 50, 0.4), 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 0 rgba(46, 125, 50, 0.4), 0 6px 12px rgba(0,0,0,0.1);
     position: relative;
     top: 0;
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
-    top: -3px;
-    box-shadow: 0 8px 0 rgba(46, 125, 50, 0.45), 0 12px 20px rgba(0,0,0,0.15);
+    top: -2px;
+    box-shadow: 0 6px 0 rgba(46, 125, 50, 0.45), 0 10px 15px rgba(0,0,0,0.15);
 }
 
 .nav-btn:active {
-    top: 3px;
-    box-shadow: 0 2px 0 rgba(46, 125, 50, 0.3), 0 4px 8px rgba(0,0,0,0.1);
+    top: 2px;
+    box-shadow: 0 2px 0 rgba(46, 125, 50, 0.3), 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .nav-btn.active {
-    background: linear-gradient(135deg, #81C784, var(--mint-dark));
-    transform: scale(1.02);
+    background: linear-gradient(135deg, #66BB6A, var(--mint-dark));
+    transform: scale(1.05);
 }
 
 .nav-btn .icon {
-    font-size: 22px;
-    margin-left: 10px;
+    font-size: 18px;
 }
 
 /* Content Area */
@@ -113,7 +114,7 @@ body {
     border-radius: 20px;
     padding: 40px 35px;
     box-shadow: 0 10px 30px rgba(139, 195, 74, 0.15);
-    min-height: 500px;
+    min-height: 550px;
 }
 
 .content-section {
@@ -134,7 +135,7 @@ body {
 .profile-header {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 40px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
@@ -150,80 +151,80 @@ body {
 
 .profile-text {
     flex: 1;
-    min-width: 300px;
+    min-width: 320px;
 }
 
 .full-name {
-    font-size: 42px;
+    font-size: 38px;
     color: var(--text-primary);
     margin-bottom: 8px;
     line-height: 1.2;
 }
 
 .tagline {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .goal {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--accent);
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 .contact-inline p {
-    font-size: 18px;
-    margin: 8px 0;
+    font-size: 17px;
+    margin: 6px 0;
 }
 
 .profile-desc h2 {
-    font-size: 26px;
+    font-size: 24px;
     color: var(--mint-darker);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .profile-desc p {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.5;
     color: #333;
 }
 
 /* Common Styles */
 .section-heading {
-    font-size: 30px;
+    font-size: 26px;
     color: var(--mint-darker);
-    margin-bottom: 25px;
-    padding-bottom: 10px;
+    margin-bottom: 22px;
+    padding-bottom: 8px;
     border-bottom: 3px solid var(--mint);
 }
 
 .content-card {
     background: var(--mint-pale);
-    padding: 28px 32px;
+    padding: 25px 30px;
     border-radius: 15px;
     margin-bottom: 20px;
     border-left: 5px solid var(--mint-dark);
 }
 
 .content-card h3 {
-    font-size: 22px;
+    font-size: 21px;
     color: var(--mint-darker);
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 .company {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--text-secondary);
     font-style: italic;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .content-card p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: #2F4F40;
 }
 
@@ -232,9 +233,9 @@ body {
 }
 
 .content-card li {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
-    padding: 8px 0;
+    padding: 6px 0;
     border-bottom: 1px dashed #C8E6C9;
 }
 
@@ -243,7 +244,7 @@ body {
 }
 
 .sub-info {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--text-secondary);
     margin-bottom: 15px;
 }
@@ -270,7 +271,7 @@ body {
 .intro-text {
     text-align: center;
     margin-bottom: 25px;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .portfolio-grid {
@@ -317,8 +318,8 @@ body {
 }
 
 .contact-line {
-    font-size: 20px;
-    margin: 15px 0;
+    font-size: 19px;
+    margin: 12px 0;
 }
 
 .contact-line a {
@@ -331,6 +332,7 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -338,7 +340,7 @@ body {
     color: white;
     padding: 12px 25px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -349,20 +351,64 @@ body {
     transform: translateY(-3px);
 }
 
-footer {
-    text-align: center;
-    margin-top: 35px;
-    padding: 20px;
-    color: var(--text-muted);
-    font-size: 16px;
+/* WhatsApp Special Style */
+.whatsapp-link {
+    background: linear-gradient(135deg, #25D366, #128C4E);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Responsive for Phone */
-@media (max-width: 768px) {
-    .full-name { font-size: 30px; }
-    .profile-header { justify-content: center; text-align: center; }
-    .two-column { grid-template-columns: 1fr; }
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .content-area { padding: 25px 20px; }
-    .nav-btn { font-size: 17px; padding: 14px 20px; }
+.whatsapp-link:hover {
+    background: linear-gradient(135deg, #128C4E, #075E33);
+    transform: translateY(-3px);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Responsive — Phone & Tablet */
+@media (max-width: 900px) {
+    .nav-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .content-area {
+        padding: 25px 20px;
+    }
+    .full-name {
+        font-size: 30px;
+    }
+    .profile-header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .main-container {
+        max-width: 900px;
+    }
+    .nav-btn {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
 }
